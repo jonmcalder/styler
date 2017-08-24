@@ -1,0 +1,31 @@
+---
+title: "Untitled"
+author: "Kirill Müller"
+date: "August 24, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::knit_engines$set(list(
+  styler = function(options) {
+    options$comment <- ""
+    knitr::engine_output(
+      options,
+      
+      c("# Bad", options$code),
+      c("# Good", styler::style_text(options$code))
+    )
+  }
+))
+```
+
+## R Markdown
+
+```{styler}
+a <- function(a,
+  b)
+{
+  }
+```
+
