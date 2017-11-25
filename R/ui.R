@@ -39,7 +39,7 @@ style_pkg <- function(pkg = ".",
                       ...,
                       style = tidyverse_style,
                       transformers = style(...),
-                      filetype = "R",
+                      filetype = c("r"),
                       exclude_files = "R/RcppExports.R") {
   pkg_root <- rprojroot::find_package_root_file(path = pkg)
   withr::with_dir(pkg_root, prettify_local(transformers, exclude_files))
