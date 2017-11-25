@@ -186,11 +186,6 @@ testthat_file <- function(...) {
   file.path(rprojroot::find_testthat_root_file(), ...)
 }
 
-#' Set arguments
-#' @param write_tree Whether or not to write tree.
-#' @name set_args
-NULL
-
 stop_insufficient_r_version <- function() {
   stop(paste0(
     "Can't write tree with R version ", getRversion(),
